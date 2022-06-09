@@ -1,0 +1,32 @@
+/* ==== NOTES ====================== */
+/* 
+1rem = 10px
+baixando o valor padrão do root de 
+100%, onde 1rem = 16px, para 62.5%,
+1rem acaba equivalendo a 10px, ou seja, se no projeto
+estiver em px é só transferir por exemplo: 
+14px = 1.4rem
+16px = 1.6rem
+20px = 2.0rem
+
+class-names:
+main-logo / é o logo principal no header
+sandwitch-button / é o icone do sidebar para abrir o menu
+
+*/
+
+
+/* ======== GERAL ============ */
+:root {
+    --brand-green: #00856F;
+    --brand-green-light: #DCE9E2;
+    --brand-green-light-02: #F7F9F9;
+    --brand-beige: #FFFAF1;
+    --brand-green-hover: #00453A;
+    --gray-headline: #212529;
+    --gray-paragraph: #495057;
+    --white: ##FFFFFF;
+
+    font-size: 62.5%;
+
+}
