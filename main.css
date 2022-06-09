@@ -102,7 +102,7 @@ body.scroll-active>:not(nav) {
     display: none;
 }
 
-body.sidebar-active #article3,
+body.sidebar-active #bottom,
 body.sidebar-active #article2,
 body.sidebar-active #article1 {
     display: none;
@@ -470,7 +470,7 @@ header .info-status p {
     margin-inline: auto;
 }
 
-#article3::before {
+#bottom::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -481,31 +481,30 @@ header .info-status p {
     z-index: -11;
 }
 
-#article3 {
+#bottom {
     display: flex;
     flex-direction: column;
     justify-content: left;
     text-align: left;
 }
 
-#article3 p {
+#bottom p {
     color: var(--brand-beige);
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
     margin-bottom: 1.2rem;
 }
-
-#article3>.main-logo {
+#bottom>.main-logo {
     margin-top: 6rem;
     margin-bottom: 2.4rem;
 }
 
-#article3>.main-logo>svg path {
+#bottom>.main-logo>svg path {
     fill: white;
 }
 
-#article3 #sociallinks ul {
+#bottom #sociallinks ul {
     display: flex;
     flex-direction: row;
     gap: 3.2rem;
