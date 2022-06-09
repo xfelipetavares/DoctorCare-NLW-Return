@@ -27,6 +27,389 @@ sandwitch-button / é o icone do sidebar para abrir o menu
     --gray-paragraph: #495057;
     --white: ##FFFFFF;
 
+    /* variavel para altura do navbar */
+    --navbar-height: 7.2rem;
+
     font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'DM Sans';
+    font-size: 1.6rem;
+    text-align: center;
+    overflow: overlay;
+}
+
+/* ======== NAVBAR ============ */
+nav {
+    display: flex;
+    height: var(--navbar-height);
+    /* padding-inline: 2.4rem; */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.scroll-active {
+    background: var(--brand-green);
+    width: 100vw;
+}
+
+nav.scroll-active .main-logo svg path {
+    fill: white;
+}
+
+nav.scroll-active .open-button svg path {
+    stroke: white;
+}
+
+/* ======== SIDEBAR ============ */
+body.sidebar-active> :not(nav) {
+    display: none;
+}
+body.sidebar-active .main-logo,
+body.sidebar-active .close-button {
+    position: relative;
+    z-index: 10;
+}
+body.sidebar-active .close-button svg path {
+    stroke: white;
+}
+body.sidebar-active .main-logo svg path {
+    fill: white;
+}
+.sidebar,
+.close-button,
+body.sidebar-active .open-button {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.sidebar-active .sidebar,
+body.sidebar-active .close-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.sidebar-active .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--brand-green);
+    width: 100vw;
+    height: 100vh;
+    padding-top: var(--navbar-height);
+}
+
+body.sidebar-active {
+    overflow: hidden;
+}
+
+.sidebar>.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    margin-top: 13.2rem;
+}
+
+.sidebar>.menu-links>li>a {
+    color: white;
+}
+.close-button, .open-button {
 
 }
+#agende a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 27.4rem; */
+    padding-inline: 3.2rem;
+    height: 5.5rem;
+    background: #FFFFFF;
+    border-radius: 4rem;
+    color: #00856F;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 3.2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links svg path {
+    fill: white;
+}
+
+body.sidebar-active nav {
+    position: relative;
+}
+
+/* ======== HEADER ============ */
+.wrapper {
+    /* isso faz com que a largura sirva para varios itens
+    inclusive o navbar */
+    width: 37.5rem;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+
+
+header::before {
+    /* coloca o wallpaper verde  */
+    content: "";
+    width: 100%;
+    height: calc(108rem + var(--navbar-height));
+    background: var(--brand-green-light);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+}
+
+header h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.08em;
+    color: var(--brand-green);
+    margin-top: calc(4.1rem + var(--navbar-height));
+}
+
+header h1 {
+    font-size: 3.4rem;
+    line-height: 130%;
+    color: var(--gray-headline);
+    margin-top: 1.6rem;
+}
+
+header>p {
+    font-size: 1.8rem;
+    line-height: 150%;
+    color: var(--gray-paragraph);
+    margin-top: 2.4rem;
+}
+
+header button {
+    display: flex;
+    width: 26.2rem;
+    height: 5.2rem;
+    border-radius: 4rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    background: var(--brand-green);
+    margin-inline: auto;
+    margin-top: 3.2rem;
+    margin-bottom: 6rem;
+    border: none;
+}
+
+header button:hover {
+    background: var(--brand-green-hover);
+}
+
+header button p {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+header img {
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+    width: 26.4rem;
+}
+
+header .info-status {
+    width: 32.7rem;
+    padding-block: 4rem;
+    background: var(--brand-beige);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    justify-content: center;
+    border: 1px solid var(--brand-green-light);
+    border-radius: 0.6rem;
+}
+
+header .info-status h3 {
+    font-size: 4.8rem;
+    line-height: 130%;
+    color: var(--gray-headline);
+}
+
+header .info-status p {
+    color: var(--brand-green);
+    line-height: 150%;
+    margin-top: 0.4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* body.sidebarActivate > :not(nav) {
+    display: none;
+}
+body.sidebarActivate .main-logo {
+    position: relative;
+    z-index: 10;
+}
+body.sidebarActivate .main-logo svg path{
+    fill: white;
+}
+body.sidebarActivate .close-button{
+    position: relative;
+    z-index: 10;
+}
+body.sidebarActivate .close-button svg path{
+    stroke: white;
+}
+
+
+nav .wrapper .close-button,
+nav .wrapper .open-button {
+    background: none;
+    border: none;
+}
+
+body.sidebarActivate {
+    overflow: hidden;
+}
+
+nav .wrapper .close-button svg path {
+    stroke: white;
+}
+
+.sidebar,
+.close-button {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.sidebarActivate .sidebar,
+body.sidebarActivate .close-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.sidebarActivate .open-button {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.sidebarActivate .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--brand-green);
+    width: 100vw;
+    height: 100vh;
+}
+
+body.sidebarActivate nav {
+    position: relative;
+}
+
+body nav .wrapper .sidebar .links {
+    margin-top: 13.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.8rem;
+}
+
+body nav .wrapper .sidebar .links a {
+    font-size: 2.4rem;
+    color: white;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+.social-links svg path {
+    fill: white;
+}
+
+nav .sidebar .social-links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+nav .sidebar > #agende {
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+    border: none;
+    /* padding-inline: 3.2rem;
+    height: 5.5rem;
+    border-radius: 4rem;
+}
+
+nav .sidebar > #agende a {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: var(--brand-green);
+} */
