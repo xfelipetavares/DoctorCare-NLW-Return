@@ -360,3 +360,46 @@ header .info-status p {
     z-index: -5;
 }
 
+#article1 {
+    margin-top: 10rem;
+    padding-top: 10rem;
+    text-align: left;
+    height: 96.9rem;
+}
+
+#article1 h4 {
+    color: var(--brand-green);
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0.08em;
+}
+
+#article1 h2 {
+    margin-top: 1.6rem;
+    margin-bottom: 2.4rem;
+    color: var(--gray-headline);
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.9rem;
+}
+
+#article1 p {
+    color: var(--gray-paragraph);
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+    margin-bottom: 6rem;
+}
+#article1 img {
+    margin-bottom: 10rem;
+}
+/* #article1::after {
+    content: "";
+    width: 100%;
+    height: 73.5rem;
+    background: white;
+    position: absolute;
+    left: 0;
+    z-index: -6;
+} */
