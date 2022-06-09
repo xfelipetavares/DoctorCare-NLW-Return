@@ -99,17 +99,21 @@ nav.scroll-active .open-button svg path {
 body.sidebar-active> :not(nav) {
     display: none;
 }
+
 body.sidebar-active .main-logo,
 body.sidebar-active .close-button {
     position: relative;
     z-index: 10;
 }
+
 body.sidebar-active .close-button svg path {
     stroke: white;
 }
+
 body.sidebar-active .main-logo svg path {
     fill: white;
 }
+
 .sidebar,
 .close-button,
 body.sidebar-active .open-button {
@@ -121,6 +125,10 @@ body.sidebar-active .sidebar,
 body.sidebar-active .close-button {
     opacity: 1;
     visibility: visible;
+}
+
+.close-button {
+    right: -0.6rem;
 }
 
 body.sidebar-active .sidebar {
@@ -144,22 +152,21 @@ body.sidebar-active {
     font-weight: 700;
     font-size: 2.4rem;
     line-height: 3.1rem;
-    margin-top: 13.2rem;
+    margin-top: 6.2rem;
 }
 
 .sidebar>.menu-links>li>a {
     color: white;
 }
-.close-button, .open-button {
 
-}
 #agende a {
     display: flex;
     justify-content: center;
     align-items: center;
     /* width: 27.4rem; */
     padding-inline: 3.2rem;
-    height: 5.5rem;
+    padding-block: 1.6rem;
+    /* height: 5.5rem; */
     background: #FFFFFF;
     border-radius: 4rem;
     color: #00856F;
@@ -290,126 +297,3 @@ header .info-status p {
     line-height: 150%;
     margin-top: 0.4rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* body.sidebarActivate > :not(nav) {
-    display: none;
-}
-body.sidebarActivate .main-logo {
-    position: relative;
-    z-index: 10;
-}
-body.sidebarActivate .main-logo svg path{
-    fill: white;
-}
-body.sidebarActivate .close-button{
-    position: relative;
-    z-index: 10;
-}
-body.sidebarActivate .close-button svg path{
-    stroke: white;
-}
-
-
-nav .wrapper .close-button,
-nav .wrapper .open-button {
-    background: none;
-    border: none;
-}
-
-body.sidebarActivate {
-    overflow: hidden;
-}
-
-nav .wrapper .close-button svg path {
-    stroke: white;
-}
-
-.sidebar,
-.close-button {
-    opacity: 0;
-    visibility: hidden;
-}
-
-body.sidebarActivate .sidebar,
-body.sidebarActivate .close-button {
-    opacity: 1;
-    visibility: visible;
-}
-
-body.sidebarActivate .open-button {
-    opacity: 0;
-    visibility: hidden;
-}
-
-body.sidebarActivate .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: var(--brand-green);
-    width: 100vw;
-    height: 100vh;
-}
-
-body.sidebarActivate nav {
-    position: relative;
-}
-
-body nav .wrapper .sidebar .links {
-    margin-top: 13.2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 4.8rem;
-}
-
-body nav .wrapper .sidebar .links a {
-    font-size: 2.4rem;
-    color: white;
-    font-weight: 700;
-    font-size: 2.4rem;
-    line-height: 3.1rem;
-}
-
-.social-links svg path {
-    fill: white;
-}
-
-nav .sidebar .social-links ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3.2rem;
-}
-
-nav .sidebar > #agende {
-    margin-top: 4.8rem;
-    margin-bottom: 8rem;
-    border: none;
-    /* padding-inline: 3.2rem;
-    height: 5.5rem;
-    border-radius: 4rem;
-}
-
-nav .sidebar > #agende a {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 23px;
-    text-transform: uppercase;
-    color: var(--brand-green);
-} */

@@ -7,8 +7,8 @@ function scrollActive() {
 }
 
 function sidebarActivate() {
-    body.classList.add(`sidebarActivate`)
+    body.classList.add(`sidebar-active`)
 }
 function sidebarDesable() {
-    body.classList.remove(`sidebarActivate`)
+    body.classList.remove(`sidebar-active`)
 }
