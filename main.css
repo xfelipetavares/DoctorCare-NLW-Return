@@ -33,6 +33,7 @@ sandwitch-button / é o icone do sidebar para abrir o menu
     font-size: 62.5%;
 }
 
+/* ======== GLOBAL PRESETS ============ */
 * {
     margin: 0;
     padding: 0;
@@ -51,9 +52,11 @@ button {
     background: none;
     border: none;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 html,
 body {
     width: 100%;
@@ -68,45 +71,145 @@ body {
     background: var(--brand-green-light-02);
 }
 
-/* ======== NAVBAR ============ */
-nav {
-    display: flex;
-    height: var(--navbar-height);
-    /* padding-inline: 2.4rem; */
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+img {
+    max-width: 100%;
+    margin-inline: auto;
 }
 
-nav .wrapper {
+.wrapper {
+    /* isso faz com que a largura sirva para varios itens
+    inclusive o navbar */
+    max-width: 37.5rem;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+
+.headers>h1 {
+    font-size: 3.4rem;
+    line-height: 130%;
+    color: var(--gray-headline);
+}
+
+.headers>h2 {
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.9rem;
+    color: var(--gray-headline);
+}
+
+.headers>h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 0.08em;
+    color: var(--brand-green);
+}
+
+.headers>h3 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    color: var(--gray-headline);
+}
+
+.content p {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+    color: var(--gray-paragraph);
+}
+
+.button-green {
+    display: flex;
+    width: 26.2rem;
+    height: 5.2rem;
+    border-radius: 4rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    background: var(--brand-green);
+    margin-inline: auto;
+    margin-top: 3.2rem;
+    margin-bottom: 6rem;
+    border: none;
+}
+
+.button-white {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 27.4rem; */
+    padding-inline: 3.2rem;
+    padding-block: 1.6rem;
+    /* height: 5.5rem; */
+    background: #FFFFFF;
+    border-radius: 4rem;
+    color: #00856F;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    margin-inline: auto;
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+.button-white:hover {
+    background: var(--brand-green-light);
+}
+
+.button-white p {
+    color: var(--brand-green);
+}
+
+.button-green p {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.button-green:hover {
+    background: var(--brand-green-hover);
+}
+
+/* ======== NAVBAR ============ */
+#navbar {
+    display: flex;
+    height: var(--navbar-height);
+    z-index: 100;
+    width: 100vw;
+    position: fixed;
+}
+
+#navbar .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-nav.scroll-active {
+#navbar.scroll-active {
     background: var(--brand-green);
-    width: 100vw;
+    
 }
 
-nav.scroll-active .main-logo svg path {
+#navbar.scroll-active .main-logo svg path {
     fill: white;
 }
 
-nav.scroll-active .open-button svg path {
+#navbar.scroll-active .open-button svg path {
     stroke: white;
 }
 
 /* ======== SIDEBAR ============ */
-body.sidebar-active>:not(nav),
-body.scroll-active>:not(nav) {
-    display: none;
+body.sidebar-active>:not(nav) {
+    visibility: hidden;
 }
 
 body.sidebar-active #bottom,
-body.sidebar-active #article2,
-body.sidebar-active #article1 {
+body.sidebar-active #contact,
+body.sidebar-active #about {
     display: none;
 }
 
@@ -141,6 +244,10 @@ body.sidebar-active .close-button {
     right: -0.6rem;
 }
 
+.sidebar {
+    transform: translateX(100%);
+}
+
 body.sidebar-active .sidebar {
     position: fixed;
     top: 0;
@@ -149,6 +256,8 @@ body.sidebar-active .sidebar {
     width: 100vw;
     height: 100vh;
     padding-top: var(--navbar-height);
+    transition: transform 300ms;
+    transform: translateX(0);
 }
 
 body.sidebar-active {
@@ -169,51 +278,22 @@ body.sidebar-active {
     color: white;
 }
 
-#agende a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* width: 27.4rem; */
-    padding-inline: 3.2rem;
-    padding-block: 1.6rem;
-    /* height: 5.5rem; */
-    background: #FFFFFF;
-    border-radius: 4rem;
-    color: #00856F;
-    font-weight: 700;
-    font-size: 1.8rem;
-    line-height: 2.3rem;
-    text-transform: uppercase;
-    margin-top: 4.8rem;
-    margin-bottom: 8rem;
-}
-
-.social-links {
+.sidebar .social-links {
     display: flex;
     gap: 3.2rem;
     align-items: center;
     justify-content: center;
 }
 
-.social-links svg path {
+.sidebar .social-links svg path {
     fill: white;
 }
 
-body.sidebar-active nav {
-    position: relative;
-}
-
 /* ======== HEADER ============ */
-.wrapper {
-    /* isso faz com que a largura sirva para varios itens
-    inclusive o navbar */
-    width: 37.5rem;
-    margin-inline: auto;
-    padding-inline: 2.4rem;
-}
 
 
-header::before {
+
+#header::before {
     /* coloca o wallpaper verde  */
     content: "";
     width: 100%;
@@ -223,67 +303,28 @@ header::before {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -11;
+    z-index: -100;
 }
 
-#body > #header > h4 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: 0.08em;
-    color: var(--brand-green);
-    margin-top: calc(4.1rem + var(--navbar-height));
+html > body > #header {
+    padding-top: calc(4rem + var(--navbar-height));
 }
 
-header h1 {
-    font-size: 3.4rem;
-    line-height: 130%;
-    color: var(--gray-headline);
+#header .headers h1 {
     margin-top: 1.6rem;
 }
 
-header>p {
-    font-size: 1.8rem;
-    line-height: 150%;
-    color: var(--gray-paragraph);
+#header .content>p {
     margin-top: 2.4rem;
+    font-size: 1.8rem;
 }
 
-header button {
-    display: flex;
-    width: 26.2rem;
-    height: 5.2rem;
-    border-radius: 4rem;
-    justify-content: center;
-    align-items: center;
-    gap: 1.6rem;
-    background: var(--brand-green);
-    margin-inline: auto;
-    margin-top: 3.2rem;
-    margin-bottom: 6rem;
-    border: none;
-}
-
-header button:hover {
-    background: var(--brand-green-hover);
-}
-
-header button p {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-}
-
-header img {
+#header .content img {
     display: block;
-    margin-inline: auto;
     object-position: 0 2rem;
-    width: 26.4rem;
 }
 
-header .info-status {
+#header .content .info-status {
     width: 32.7rem;
     padding-block: 4rem;
     background: var(--brand-beige);
@@ -296,13 +337,13 @@ header .info-status {
     border-radius: 0.6rem;
 }
 
-header .info-status h3 {
+#header .content .info-status h3 {
     font-size: 4.8rem;
     line-height: 130%;
     color: var(--gray-headline);
 }
 
-header .info-status p {
+#header .content .info-status p {
     color: var(--brand-green);
     line-height: 150%;
     margin-top: 0.4rem;
@@ -313,21 +354,9 @@ header .info-status p {
     margin-top: 10rem;
     margin-bottom: 6rem;
 }
+
 #services {
     padding-top: 1rem;
-}
-
-#services header h4 {
-    font-weight: 700;
-    font-size: 1.4rem;
-    line-height: 150%;
-    letter-spacing: 0.08em;
-}
-
-#services header h2 {
-    font-weight: 700;
-    font-size: 3rem;
-    line-height: 3.9rem;
 }
 
 #services .cards {
@@ -347,132 +376,72 @@ header .info-status p {
     padding: 2.4rem;
 }
 
-#services .cards .card h3 {
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 31px;
-    color: var(--gray-headline);
-}
-
-#services .cards .card p {
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 150%;
-    color: var(--gray-paragraph);
-}
-
 #services::after {
     content: "";
     background: var(--brand-beige);
     width: 100%;
-    height: 96.9rem;
+    height: 97.9rem;
     display: block;
     position: absolute;
     left: 0;
     margin-top: 10rem;
-    z-index: -11;
+    z-index: -100;
 }
 
-#article1 {
+#about {
     margin-top: 10rem;
     padding-top: 10rem;
     text-align: left;
     height: 96.9rem;
 }
 
-#article1 h4 {
-    color: var(--brand-green);
-    font-weight: 700;
-    font-size: 1.4rem;
-    line-height: 150%;
-    letter-spacing: 0.08em;
-}
-
-#article1 h2 {
+#about h2 {
     margin-top: 1.6rem;
     margin-bottom: 2.4rem;
-    color: var(--gray-headline);
-    font-weight: 700;
-    font-size: 3rem;
-    line-height: 3.9rem;
 }
 
-#article1 p {
-    color: var(--gray-paragraph);
-    font-weight: 400;
-    font-size: 1.6rem;
-    line-height: 150%;
+#about p {
     margin-bottom: 6rem;
 }
 
-#article1 img {
+#about img {
     margin-bottom: 10rem;
 }
 
-#article1::after {
+#about::after {
     content: "";
     width: 100%;
     height: 73.5rem;
     background: white;
     position: absolute;
     left: 0;
-    z-index: -11;
+    z-index: -100;
     display: block;
 }
 
-#article2 {
+#contact {
     display: flex;
     flex-direction: column;
     text-align: left;
     height: 73.5rem;
 }
 
-#article2 h2 {
-    margin-top: 10rem;
-    margin-bottom: 2.4rem;
-    color: var(--gray-headline);
-    font-weight: 700;
-    font-size: 3rem;
-    line-height: 3.9rem;
+#contact h2 {
+    padding-top: 10rem;
     margin-bottom: 3.2rem;
 }
 
-#article2>a {
+#contact .contact-location {
     display: flex;
     gap: 0.8rem;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: var(--gray-paragraph);
-    margin-top: 1.6rem;
-
+    margin-bottom: 1.6rem;
 }
 
-#article2>button {
-    display: flex;
-    width: 26.2rem;
-    height: 5.2rem;
-    border-radius: 4rem;
-    justify-content: center;
-    align-items: center;
-    gap: 1.6rem;
-    background: var(--brand-green);
-    margin-top: 3.2rem;
-    margin-bottom: 6rem;
-    border: none;
+#contact button {
+    width: 26.7rem;
+    height: 5.6rem;
+    margin-inline: 0;
 
-}
-
-#article2 button p {
-    color: white;
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-#article2>img {
-    margin-inline: auto;
 }
 
 #bottom::before {
@@ -483,7 +452,7 @@ header .info-status p {
     background: var(--brand-green);
     display: block;
     left: 0;
-    z-index: -11;
+    z-index: -100;
 }
 
 #bottom {
@@ -493,23 +462,22 @@ header .info-status p {
     text-align: left;
 }
 
-#bottom p {
-    color: var(--brand-beige);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-    margin-bottom: 1.2rem;
-}
-#bottom>.main-logo {
+#bottom header {
     margin-top: 6rem;
     margin-bottom: 2.4rem;
 }
 
-#bottom>.main-logo>svg path {
+#bottom header svg path {
     fill: white;
 }
 
-#bottom #sociallinks ul {
+#bottom .content p {
+    color: var(--brand-beige);
+    margin-bottom: 1.2rem;
+}
+
+
+#bottom .content #sociallinks ul {
     display: flex;
     flex-direction: row;
     gap: 3.2rem;
