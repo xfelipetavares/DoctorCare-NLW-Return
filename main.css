@@ -51,7 +51,9 @@ button {
     background: none;
     border: none;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 html,
 body {
     width: 100%;
@@ -224,7 +226,7 @@ header::before {
     z-index: -11;
 }
 
-header h4 {
+#body > #header > h4 {
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 150%;
@@ -310,6 +312,9 @@ header .info-status p {
 #services header {
     margin-top: 10rem;
     margin-bottom: 6rem;
+}
+#services {
+    padding-top: 1rem;
 }
 
 #services header h4 {

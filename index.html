@@ -52,10 +52,11 @@
 
             <div class="sidebar">
                 <ul class="menu-links">
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Depoimentos</a></li>
+                    <li><a href="index.html" onclick="sidebarDesable()">Início</a></li>
+                    <li><a href="#article1" onclick="sidebarDesable()">Sobre</a></li>
+                    <li><a href="#services" onclick="sidebarDesable()">Serviços</a></li>
+                    <li><a href="#article2" onclick="sidebarDesable()">Contato</a></li>
+                    <li><a href="#" onclick="sidebarDesable()">Depoimentos</a></li>
                 </ul>
                 <button id="agende"><a href="#">Agende Sua consulta</a></button>
 
@@ -128,7 +129,7 @@
             </button>
         </div>
     </nav>
-    <header class="header wrapper">
+    <header id="header" class="header wrapper">
         <h4>BOAS-VINDAS A DOCTORCARE 👋</h4>
         <h1>Assistência médica simplificada para todos</h1>
         <p>Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua doença e proporcionar uma cura
