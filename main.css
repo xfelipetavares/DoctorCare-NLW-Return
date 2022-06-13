@@ -8,11 +8,6 @@ estiver em px é só transferir por exemplo:
 14px = 1.4rem
 16px = 1.6rem
 20px = 2.0rem
-
-class-names:
-main-logo / é o logo principal no header
-sandwitch-button / é o icone do sidebar para abrir o menu
-
 */
 
 
@@ -203,6 +198,9 @@ img {
 }
 
 /* ======== SIDEBAR ============ */
+body.sidebar-active #navbar > .wrapper {
+    width: 100%;
+}
 body.sidebar-active>:not(nav) {
     visibility: hidden;
 }

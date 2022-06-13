@@ -18,8 +18,5 @@ function sidebarDesable() {
 //     distance: `30px`,
 //     duration: 700,
 // }).reveal(`
-//     #header,
-//     #header img,
-//     #header button,
-
+//     #header
 // `);
