@@ -198,6 +198,9 @@ img {
 }
 
 /* ======== SIDEBAR ============ */
+#handButtonHover:hover {
+    cursor: pointer;
+}
 body.sidebar-active #navbar > .wrapper {
     width: 100%;
 }
