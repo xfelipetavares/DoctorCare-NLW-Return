@@ -116,8 +116,8 @@ img {
 
 .button-green {
     display: flex;
-    width: 26.2rem;
-    height: 5.2rem;
+    width: fit-content;
+    padding: 1.6rem 3.2rem;
     border-radius: 4rem;
     justify-content: center;
     align-items: center;
@@ -127,16 +127,23 @@ img {
     margin-top: 3.2rem;
     margin-bottom: 6rem;
     border: none;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+.button-green:hover {
+    background: var(--brand-green-hover);
 }
 
 .button-white {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 27.4rem; */
-    padding-inline: 3.2rem;
-    padding-block: 1.6rem;
-    /* height: 5.5rem; */
+    padding: 1.6rem 3.2rem;
+    width: fit-content;
     background: #FFFFFF;
     border-radius: 4rem;
     color: #00856F;
@@ -147,26 +154,12 @@ img {
     margin-inline: auto;
     margin-top: 4.8rem;
     margin-bottom: 8rem;
+    color: var(--brand-green);
+    transition: background 300ms;
 }
 
 .button-white:hover {
     background: var(--brand-green-light);
-}
-
-.button-white p {
-    color: var(--brand-green);
-}
-
-.button-green p {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-}
-
-.button-green:hover {
-    background: var(--brand-green-hover);
 }
 
 /* ======== NAVBAR ============ */
@@ -186,7 +179,7 @@ img {
 
 #navbar.scroll-active {
     background: var(--brand-green);
-    
+
 }
 
 #navbar.scroll-active .main-logo svg path {
@@ -201,14 +194,16 @@ img {
 #handButtonHover:hover {
     cursor: pointer;
 }
-body.sidebar-active #navbar > .wrapper {
+
+body.sidebar-active #navbar>.wrapper {
     width: 100%;
 }
+
 body.sidebar-active>:not(nav) {
     visibility: hidden;
 }
 
-body.sidebar-active #bottom,
+body.sidebar-active #footer,
 body.sidebar-active #contact,
 body.sidebar-active #about {
     display: none;
@@ -307,7 +302,7 @@ body.sidebar-active {
     z-index: -100;
 }
 
-html > body > #header {
+html>body>#header {
     padding-top: calc(4rem + var(--navbar-height));
 }
 
@@ -350,7 +345,7 @@ html > body > #header {
     margin-top: 0.4rem;
 }
 
-/* ======== SECTION ============ */
+/* ======== SERVICES ============ */
 #services header {
     margin-top: 10rem;
     margin-bottom: 6rem;
@@ -358,6 +353,7 @@ html > body > #header {
 
 #services {
     padding-top: 1rem;
+    margin-bottom: 10rem;
 }
 
 #services .cards {
@@ -377,7 +373,8 @@ html > body > #header {
     padding: 2.4rem;
 }
 
-#services::after {
+/* ================= ABOUT ======================== */
+#about::before {
     content: "";
     background: var(--brand-beige);
     width: 100%;
@@ -385,17 +382,16 @@ html > body > #header {
     display: block;
     position: absolute;
     left: 0;
-    margin-top: 10rem;
     z-index: -100;
 }
 
 #about {
-    margin-top: 10rem;
-    padding-top: 10rem;
     text-align: left;
     height: 96.9rem;
 }
-
+#about header {
+    padding-top: 10rem;
+}
 #about h2 {
     margin-top: 1.6rem;
     margin-bottom: 2.4rem;
@@ -409,7 +405,8 @@ html > body > #header {
     margin-bottom: 10rem;
 }
 
-#about::after {
+/* ================= CONTACT ======================== */
+#contact::before {
     content: "";
     width: 100%;
     height: 73.5rem;
@@ -434,18 +431,24 @@ html > body > #header {
 
 #contact .contact-location {
     display: flex;
-    gap: 0.8rem;
-    margin-bottom: 1.6rem;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+#contact ul li {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
 }
 
 #contact button {
-    width: 26.7rem;
-    height: 5.6rem;
     margin-inline: 0;
 
 }
 
-#bottom::before {
+/* ================= BOTTOM ======================== */
+#footer::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -456,29 +459,29 @@ html > body > #header {
     z-index: -100;
 }
 
-#bottom {
+#footer {
     display: flex;
     flex-direction: column;
     justify-content: left;
     text-align: left;
 }
 
-#bottom header {
+#footer header {
     margin-top: 6rem;
     margin-bottom: 2.4rem;
 }
 
-#bottom header svg path {
+#footer header svg path {
     fill: white;
 }
 
-#bottom .content p {
+#footer .content p {
     color: var(--brand-beige);
     margin-bottom: 1.2rem;
 }
 
 
-#bottom .content #sociallinks ul {
+#footer .content #sociallinks ul {
     display: flex;
     flex-direction: row;
     gap: 3.2rem;
