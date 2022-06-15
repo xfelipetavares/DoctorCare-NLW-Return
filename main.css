@@ -389,9 +389,11 @@ html>body>#header {
     text-align: left;
     height: 96.9rem;
 }
+
 #about header {
     padding-top: 10rem;
 }
+
 #about h2 {
     margin-top: 1.6rem;
     margin-bottom: 2.4rem;
@@ -486,4 +488,19 @@ html>body>#header {
     flex-direction: row;
     gap: 3.2rem;
     margin-top: 3.2rem;
+}
+
+/* ================ Back to top button =============== */
+#backToTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+    z-index: 10;
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms;
+}
+#backToTopButton.scroll-active {
+    visibility: visible;
+    opacity: 1;
 }
