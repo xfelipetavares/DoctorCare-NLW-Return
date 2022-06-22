@@ -23,7 +23,7 @@ function topButtonScrollActive() {
 function sidebarActivate() {
     body.classList.add(`sidebar-active`)
 }
-function sidebarDesable() {
+function sidebarDisable() {
     body.classList.remove(`sidebar-active`)
 }
 
