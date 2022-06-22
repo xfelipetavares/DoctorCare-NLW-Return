@@ -66,15 +66,15 @@ body {
     background: var(--brand-green-light-02);
 }
 
-img {
-    max-width: 100%;
+html body img {
+    width: 100%;
     margin-inline: auto;
 }
 
 .wrapper {
     /* isso faz com que a largura sirva para varios itens
     inclusive o navbar */
-    max-width: 37.5rem;
+    max-width: min(50rem, 100%);
     margin-inline: auto;
     padding-inline: 2.4rem;
 }
@@ -167,12 +167,12 @@ img {
     display: flex;
     height: var(--navbar-height);
     z-index: 100;
-    width: 100vw;
+    width: 100%;
     position: fixed;
 }
-
 #navbar .wrapper {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
 }
@@ -206,6 +206,15 @@ img {
     stroke: var(--brand-green);
 }
 
+/* body.sidebar-active #navbar .wrapper {
+    display: flex;
+    justify-content: space-between;
+} */
+
+#navbar .sidebar{
+    position: fixed;
+}
+
 /* ======== SIDEBAR ============ */
 #handButtonHover:hover {
     cursor: pointer;
@@ -225,12 +234,6 @@ body.sidebar-active #about {
     display: none;
 }
 
-body.sidebar-active .main-logo,
-body.sidebar-active .close-button {
-    position: relative;
-    z-index: 10;
-}
-
 body.sidebar-active .close-button svg path {
     stroke: white;
 }
@@ -240,16 +243,14 @@ body.sidebar-active .close-button svg path {
 body.sidebar-active .open-button {
     opacity: 0;
     visibility: hidden;
+    display: none;
 }
 
 body.sidebar-active .sidebar,
 body.sidebar-active .close-button {
     opacity: 1;
     visibility: visible;
-}
-
-.close-button {
-    right: -0.6rem;
+    display: list-item;
 }
 
 .sidebar {
@@ -257,7 +258,6 @@ body.sidebar-active .close-button {
 }
 
 body.sidebar-active .sidebar {
-    position: fixed;
     top: 0;
     left: 0;
     background: var(--brand-green);
@@ -266,6 +266,7 @@ body.sidebar-active .sidebar {
     padding-top: var(--navbar-height);
     transition: transform 300ms;
     transform: translateX(0);
+    z-index: -20;
 }
 
 body.sidebar-active {
@@ -333,7 +334,6 @@ html>body>#header {
 }
 
 #header .content .info-status {
-    width: 32.7rem;
     padding-block: 4rem;
     background: var(--brand-beige);
     margin-inline: auto;
@@ -464,9 +464,10 @@ html>body>#header {
 
 }
 
-#contact button {
-    margin-inline: 0;
-
+#contact > .wrapper > .content > .button-green {
+    margin-left: 0;
+    display: flex;
+    justify-content: left;
 }
 
 /* ================= BOTTOM ======================== */
